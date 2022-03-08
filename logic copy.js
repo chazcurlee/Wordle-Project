@@ -90,7 +90,7 @@ const autoMoveCursor = (elId) => {
 
                 case "sq30":
 
-
+                default:
 
             }
             
