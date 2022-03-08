@@ -2358,6 +2358,37 @@ class Textfield {
 // Functions
 
 
+const moveFunc = (old, fresh) => {
+
+    let enteredKey = document.getElementById(old).value;
+    let capKey = enteredKey.toUpperCase();
+    let innerText = document.getElementById(old).value;
+
+
+    if (fresh === "sq31In") {
+
+        document.getElementById(old).value = innerText.replace(enteredKey, capKey);
+        document.getElementById(old).blur();
+        document.getElementById(old).toggleAttribute("disabled");
+
+    }else {
+
+        document.getElementById(old).value = innerText.replace(enteredKey, capKey);
+        console.log(fresh);
+        document.getElementById(fresh).toggleAttribute("disabled");
+        document.getElementById(fresh).focus();
+        document.getElementById(old).blur();
+        document.getElementById(old).toggleAttribute("disabled");
+
+    }
+
+
+
+
+
+}
+
+
 const genAns = () => {
 
     let rand = Math.floor(Math.random() * answers.length);
@@ -2478,13 +2509,10 @@ const autoMoveCursor = (elId) => {
     
     
             }) 
+
+            moveFunc(elId, newId);
     
-            document.getElementById(elId).value = innerText.replace(enteredKey, capKey);
-            console.log(newId);
-            document.getElementById(newId).toggleAttribute("disabled");
-            document.getElementById(newId).focus();
-            document.getElementById(elId).blur();
-            document.getElementById(elId).toggleAttribute("disabled");
+            
 
 
         }
@@ -2575,27 +2603,42 @@ document.addEventListener("keyup", function() {
     let actId = document.activeElement.id;
     console.log(actId)
     let kyCde = event.keyCode;
+    let enteredKey = document.getElementById(actId).value;
+    let capKey = enteredKey.toUpperCase();
+    let innerText = document.getElementById(actId).value;
 
     if (kyCde === 13) {
 
         switch(actId) {
+
             case "sq5In":
                 enterCheck(line1);
+                moveFunc(actId, "sq6In");
                 break;
     
             case "sq10In":
+                enterCheck(line1);
+                moveFunc(actId, "sq11In");
                 break;
     
             case "sq15In":
+                enterCheck(line1);
+                moveFunc(actId, "sq16In");
                 break;
     
             case "sq20In":
+                enterCheck(line1);
+                moveFunc(actId, "sq21In");
                 break;
     
             case "sq25In":
+                enterCheck(line1);
+                moveFunc(actId, "sq26In");
                 break;
     
             case "sq30In":
+                enterCheck(line1);
+                moveFunc(actId, "sq31In");
                 break;
     
             default:

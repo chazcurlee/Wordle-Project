@@ -53,6 +53,7 @@ Please try out the phenomenal game of Wordle to know what I am striving to recre
 * Credit for only allowing alphabet in input fields: https://stackoverflow.com/questions/56502735/how-do-i-make-onkeyup-only-be-an-alphabet-key - user: jake
 * Credit only allowing alphbet keys: https://www.includehelp.com/code-snippets/allow-only-alphabets-in-input-field-in-javascript.aspx
 * Credit creating a triangle in css: triangle credit: https://www.w3schools.com/howto/howto_css_shapes.asp
+* Credit for answer list: https://github.com/exciteabletom/wordle-API
 
 
 
