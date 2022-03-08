@@ -9,6 +9,8 @@ const line5 = ["sq21In", "sq22In", "sq23In", "sq24In", "sq25In"];
 const line6 = ["sq26In", "sq27In", "sq28In", "sq29In", "sq30In"];
 const fives = ["sq5In", "sq10In", "sq15In", "sq20In", "sq25In", "sq30In"];
 let actId = document.activeElement.id;
+playerAns = [];
+compAns = ["t", "e", "s", "t"];
 
 
 // Classes
@@ -43,37 +45,22 @@ class Textfield {
 
 
 
-const enterCheck = () => {
+const enterCheck = (line) => {
 
-    let pos = 0;
-    let newId = null;
-    let kyCde = event.keyCode;
-    let enteredKey = document.getElementById(elId).value;
-    let capKey = enteredKey.toUpperCase();
-    let innerText = document.getElementById(elId).value;
+    playerAns = [];
 
-    inputIdArr.forEach((val, idx) => {
+  line.forEach((ex) => {
 
-    if (val === elId) {
-        pos = idx + 1;
-        
-    }
 
-    inputIdArr.forEach((val, idx) => {
+    let txtInp = document.getElementById(ex).value;
 
-        if (idx === pos) {
-            newId = val;
-        }
 
-    })
-    })
+    playerAns.push(txtInp);
 
-    document.getElementById(elId).value = innerText.replace(enteredKey, capKey);
-    console.log(newId);
-    document.getElementById(newId).toggleAttribute("disabled");
-    document.getElementById(newId).focus();
-    document.getElementById(elId).blur();
-    document.getElementById(elId).toggleAttribute("disabled");
+
+
+  })
+  console.log(playerAns);
 
 }
 
@@ -260,7 +247,7 @@ document.addEventListener("keyup", function() {
 
         switch(actId) {
             case "sq5In":
-                console.log("enter sq5 switch success")
+                enterCheck(line1);
                 break;
     
             case "sq10In":
