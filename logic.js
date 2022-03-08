@@ -8,6 +8,7 @@ const line4 = ["sq16In", "sq17In", "sq18In", "sq19In", "sq20In"];
 const line5 = ["sq21In", "sq22In", "sq23In", "sq24In", "sq25In"];
 const line6 = ["sq26In", "sq27In", "sq28In", "sq29In", "sq30In"];
 const fives = ["sq5In", "sq10In", "sq15In", "sq20In", "sq25In", "sq30In"];
+import {answers} from "./answers.js";
 let actId = document.activeElement.id;
 playerAns = [];
 compAns = ["t", "e", "s", "t"];
@@ -42,7 +43,23 @@ class Textfield {
 // Functions
 
 
+const genAns = () => {
 
+    let splitAns = [];
+
+    let rand = Math.floor(Math.random() * answers.length);
+    let answer = answers[rand];
+    let answerStr = answer.toString();
+
+    for (i=0; i<6; i++) {
+
+        splitAns.push(answerStr.charAt(i));
+
+
+    }
+
+
+}
 
 
 const enterCheck = (line) => {
