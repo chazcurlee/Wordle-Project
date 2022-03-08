@@ -2322,11 +2322,19 @@ const line3 = ["sq11In", "sq12In", "sq13In", "sq14In", "sq15In"];
 const line4 = ["sq16In", "sq17In", "sq18In", "sq19In", "sq20In"];
 const line5 = ["sq21In", "sq22In", "sq23In", "sq24In", "sq25In"];
 const line6 = ["sq26In", "sq27In", "sq28In", "sq29In", "sq30In"];
+
+const line1Div = ["sq1", "sq2", "sq3", "sq4", "sq5"];
+const line2Div = ["sq6", "sq7", "sq8", "sq9", "sq10"];
+const line3Div = ["sq11", "sq12", "sq13", "sq14", "sq15"];
+const line4Div = ["sq16", "sq17", "sq18", "sq19", "sq20"];
+const line5Div = ["sq21", "sq22", "sq23", "sq24", "sq25"];
+const line6Div = ["sq26", "sq27", "sq28", "sq29", "sq30"];
 const fives = ["sq5In", "sq10In", "sq15In", "sq20In", "sq25In", "sq30In"];
 
 let actId = document.activeElement.id;
 let playerAns = [];
 let splitAns = [];
+let colorArr = [];
 
 
 // Classes
@@ -2354,8 +2362,101 @@ class Textfield {
 
 }
 
+class Truthfield {
+    constructor(position, letter) {
+
+        this.position = position,
+        this.letter = letter
+
+
+
+    }
+
+
+
+}
+
 
 // Functions
+
+const ansCheck = (userAns, autoAns, line) => {
+
+    colorArr = [];
+    let arrPos = [];
+    
+    
+
+    userAns.forEach((ex, idx) => {
+
+        
+        let lowerEx = ex.toLowerCase();
+
+        if (autoAns.includes(lowerEx)) {
+
+            if (lowerEx === autoAns[idx]) {
+
+                let newObj = new Truthfield(true, true);
+                    colorArr.push(newObj);
+                    return;
+
+
+            }else {
+
+                let newObj = new Truthfield(false, true);
+                    colorArr.push(newObj); 
+                    return;
+
+
+            }
+
+
+
+        }else {
+
+            let newObj = new Truthfield(false, false);
+            colorArr.push(newObj); 
+            return;
+        }
+
+
+
+
+
+    })
+
+    console.log(colorArr)
+
+    colorArr.forEach((zee, ix) => {
+
+        
+        
+
+        if ((zee.position && zee.letter) === true) {
+            console.log("1: " + line[ix])
+
+
+            document.getElementById(line[ix]).setAttribute("class", "green");
+
+
+        }else if ((zee.letter || zee.position) === true) {
+            console.log("2: " + line[ix])
+
+            document.getElementById(line[ix]).setAttribute("class", "yellow");
+
+        }else {
+            console.log("3: " + line[ix])
+
+            document.getElementById(line[ix]).setAttribute("class", "grey");
+
+
+        }
+
+
+
+    })
+
+
+}
 
 
 const moveFunc = (old, fresh) => {
@@ -2614,31 +2715,37 @@ document.addEventListener("keyup", function() {
             case "sq5In":
                 enterCheck(line1);
                 moveFunc(actId, "sq6In");
+                ansCheck(playerAns, splitAns, line1);
                 break;
     
             case "sq10In":
-                enterCheck(line1);
+                enterCheck(line2);
                 moveFunc(actId, "sq11In");
+                ansCheck(playerAns, splitAns, line2);
                 break;
     
             case "sq15In":
-                enterCheck(line1);
+                enterCheck(line3);
                 moveFunc(actId, "sq16In");
+                ansCheck(playerAns, splitAns, line3);
                 break;
     
             case "sq20In":
-                enterCheck(line1);
+                enterCheck(line4);
                 moveFunc(actId, "sq21In");
+                ansCheck(playerAns, splitAns, line4);
                 break;
     
             case "sq25In":
-                enterCheck(line1);
+                enterCheck(line5);
                 moveFunc(actId, "sq26In");
+                ansCheck(playerAns, splitAns, line5);
                 break;
     
             case "sq30In":
-                enterCheck(line1);
+                enterCheck(line6);
                 moveFunc(actId, "sq31In");
+                ansCheck(playerAns, splitAns, line6);
                 break;
     
             default:

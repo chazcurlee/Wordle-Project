@@ -25,18 +25,48 @@ header {
 
 input {
 
+    margin: 5px;
     grid-row-end: 1;
     justify-self:last bottom;
     align-self: bottom;
     background-color: rgba(250, 250, 250, 0) ;
     border: white;
     text-align:center;
+    color: black;
+    font-weight: 600;
+    font-size: 20px
     
+
+}
+
+
+.green {
+
+    background-color: green;
+
+}
+
+
+.yellow {
+
+    background-color: yellow;
+
+
+}
+
+
+.grey {
+
+
+    background-color: grey
+
 
 }
 
 .square {
 
+    border: 2px solid black;
+    margin: 5px;
     display: grid;
     grid-template-columns: 1fr;
 
