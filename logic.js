@@ -2381,37 +2381,127 @@ class Truthfield {
 
 const successFailCheck = (line) => {
 
+    let checkArr = [];
+    console.log(line);
 
-    switch (line) {
+    switch (line[0]) {
 
-        case "line1":
+        case "sq1In":
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
 
 
             })
             break;
 
-        case "line2":
+        case "sq6In":
+
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
+
+
+            })
             break;
 
-        case "line3":
+        case "sq11In":
+
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
+
+
+            })
             break;
 
-        case "line4":
+        case "sq16In":
+
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
+
+
+            })
             break;
 
-        case "line5":
+        case "sq21In":
+
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
+
+
+            })
             break;
 
-        case "line6":
+        case "sq26In":
+
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+                console.log(check)
+                if (check === "green") {
+
+                    checkArr.push(1);
+
+                }
+
+
+            })
             break;
 
 
 
     }
 
+
+    let result = checkArr.reduce((accum, val) => {
+
+        return accum + val;
+
+    })
+
+    if (result === 5) {
+
+        let conf = confirm("You win!\nPlay again?");
+        if (conf === true) {
+
+            window.location.reload(true);
+
+        }
+
+    }
 
 }
 
@@ -2460,7 +2550,7 @@ const ansCheck = (userAns, autoAns, line) => {
 
     })
 
-    console.log(colorArr)
+    
 
     colorArr.forEach((zee, ix) => {
 
@@ -2468,7 +2558,7 @@ const ansCheck = (userAns, autoAns, line) => {
         
 
         if ((zee.position && zee.letter) === true) {
-            console.log("1: " + line[ix])
+            
 
 
             document.getElementById(line[ix]).setAttribute("class", "green");
@@ -2511,7 +2601,7 @@ const moveFunc = (old, fresh) => {
     }else {
 
         document.getElementById(old).value = innerText.replace(enteredKey, capKey);
-        console.log(fresh);
+        
         document.getElementById(fresh).toggleAttribute("disabled");
         document.getElementById(fresh).focus();
         document.getElementById(old).blur();
@@ -2560,7 +2650,7 @@ const enterCheck = (line) => {
 
 
   })
-  console.log(playerAns);
+  
 
 }
 
@@ -2589,7 +2679,7 @@ const autoMoveCursor = (elId) => {
 
     if (kyCde >= 65 && kyCde <= 90){
         let actId = document.activeElement.id;
-        console.log(actId)
+        
 
         if (fives.includes(actId)) {
 
@@ -2673,7 +2763,7 @@ document.addEventListener("keyup", function() {
     if (event.key === "Backspace") {
 
         let actId = document.activeElement.id;
-        console.log(actId)
+        
         let pastId = null;
         
 
@@ -2738,7 +2828,7 @@ document.addEventListener("keyup", function() {
 
 
     let actId = document.activeElement.id;
-    console.log(actId)
+    
     let kyCde = event.keyCode;
     let enteredKey = document.getElementById(actId).value;
     let capKey = enteredKey.toUpperCase();
@@ -2752,36 +2842,42 @@ document.addEventListener("keyup", function() {
                 enterCheck(line1);
                 moveFunc(actId, "sq6In");
                 ansCheck(playerAns, splitAns, line1);
+                successFailCheck(line1);
                 break;
     
             case "sq10In":
                 enterCheck(line2);
                 moveFunc(actId, "sq11In");
                 ansCheck(playerAns, splitAns, line2);
+                successFailCheck(line2);
                 break;
     
             case "sq15In":
                 enterCheck(line3);
                 moveFunc(actId, "sq16In");
                 ansCheck(playerAns, splitAns, line3);
+                successFailCheck(line3);
                 break;
     
             case "sq20In":
                 enterCheck(line4);
                 moveFunc(actId, "sq21In");
                 ansCheck(playerAns, splitAns, line4);
+                successFailCheck(line4);
                 break;
     
             case "sq25In":
                 enterCheck(line5);
                 moveFunc(actId, "sq26In");
                 ansCheck(playerAns, splitAns, line5);
+                successFailCheck(line5);
                 break;
     
             case "sq30In":
                 enterCheck(line6);
                 moveFunc(actId, "sq31In");
                 ansCheck(playerAns, splitAns, line6);
+                successFailCheck(line6);
                 break;
     
             default:
