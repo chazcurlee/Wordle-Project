@@ -2335,6 +2335,7 @@ let actId = document.activeElement.id;
 let playerAns = [];
 let splitAns = [];
 let colorArr = [];
+let joinedAns = null;
 
 
 // Classes
@@ -2382,7 +2383,7 @@ class Truthfield {
 const successFailCheck = (line) => {
 
     let checkArr = [];
-    console.log(line);
+    
 
     switch (line[0]) {
 
@@ -2395,6 +2396,8 @@ const successFailCheck = (line) => {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2406,11 +2409,13 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2427,6 +2432,8 @@ const successFailCheck = (line) => {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2443,6 +2450,8 @@ const successFailCheck = (line) => {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2459,6 +2468,8 @@ const successFailCheck = (line) => {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2475,6 +2486,8 @@ const successFailCheck = (line) => {
 
                     checkArr.push(1);
 
+                }else {
+                    checkArr.push(0);
                 }
 
 
@@ -2496,6 +2509,15 @@ const successFailCheck = (line) => {
 
         let conf = confirm("You win!\nPlay again?");
         if (conf === true) {
+
+            window.location.reload(true);
+
+        }
+
+    }else if (line[0] === "sq26In") {
+
+        let conf1 = confirm(`You lose! The answer was '${joinedAns}.' \nPlay again?`);
+        if (conf1 === true) {
 
             window.location.reload(true);
 
@@ -2565,12 +2587,12 @@ const ansCheck = (userAns, autoAns, line) => {
 
 
         }else if ((zee.letter || zee.position) === true) {
-            console.log("2: " + line[ix])
+            
 
             document.getElementById(line[ix]).setAttribute("class", "yellow");
 
         }else {
-            console.log("3: " + line[ix])
+            
 
             document.getElementById(line[ix]).setAttribute("class", "grey");
 
@@ -2631,6 +2653,8 @@ const genAns = () => {
     }
     splitAns.pop();
     console.log(splitAns);
+    joinedAns = splitAns.join("");
+    console.log(joinedAns)
 }
 
 
@@ -2881,7 +2905,7 @@ document.addEventListener("keyup", function() {
                 break;
     
             default:
-                console.log("enter switch default")
+                
                 break;
                 
     
