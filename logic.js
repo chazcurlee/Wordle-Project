@@ -2652,9 +2652,9 @@ const genAns = () => {
 
     }
     splitAns.pop();
-    console.log(splitAns);
+    // console.log(splitAns); This will give the answer in console. Keeping in case I need to use it again.
     joinedAns = splitAns.join("");
-    console.log(joinedAns)
+    
 }
 
 
