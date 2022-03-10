@@ -3,6 +3,7 @@ body {
     display: grid;
     grid-template-columns: 0fr;
     grid-template-rows: 500px 1fr auto;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 main {
@@ -48,12 +49,14 @@ ul {
 li {
 
     margin: 5px;
+    font-size: 30px;;
 
 }
 
 img {
 
     width: 1000px;
+    border-bottom: 1px solid black;
 
 
 }
@@ -96,6 +99,7 @@ img {
 
     grid-row: 2 / span 1;
     grid-column: 4 / span 1;
+    
 
 }
 
@@ -135,7 +139,11 @@ grid-template-rows: repeat(5, 1fr);
 
 }
 
+#title {
 
+    font-size: 80px;
+
+}
 
 
 .triangle {
