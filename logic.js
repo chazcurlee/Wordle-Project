@@ -2379,6 +2379,42 @@ class Truthfield {
 
 // Functions
 
+const successFailCheck = (line) => {
+
+
+    switch (line) {
+
+        case "line1":
+            line.forEach((ex) => {
+
+                let check = document.getElementById(ex).getAttribute("class");
+
+
+            })
+            break;
+
+        case "line2":
+            break;
+
+        case "line3":
+            break;
+
+        case "line4":
+            break;
+
+        case "line5":
+            break;
+
+        case "line6":
+            break;
+
+
+
+    }
+
+
+}
+
 const ansCheck = (userAns, autoAns, line) => {
 
     colorArr = [];
