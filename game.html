@@ -11,10 +11,11 @@
     <title>Letterle</title>
     
 </head>
-<body onload="setFocus(); genAns()">
+<body onload="setFocus(); genAns()" onmousedown="mouseD()">
     <header>
         <h1 style="margin: 0px 0px 5px 0px;">Letterle</h1>
         <button id="rules" onclick="window.location.href='./rules.html'">Rules</button>
+        <button id="playdark" onclick="darkMode()">Dark Mode</button>
     </header>
 
     <main id="board">

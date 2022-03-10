@@ -2323,7 +2323,7 @@ const line4 = ["sq16In", "sq17In", "sq18In", "sq19In", "sq20In"];
 const line5 = ["sq21In", "sq22In", "sq23In", "sq24In", "sq25In"];
 const line6 = ["sq26In", "sq27In", "sq28In", "sq29In", "sq30In"];
 
-const line1Div = ["sq1", "sq2", "sq3", "sq4", "sq5"];
+const lineDiv = ["sq1", "sq2", "sq3", "sq4", "sq5", "sq6", "sq7", "sq8", "sq9", "sq10", "sq11", "sq12", "sq13", "sq14", "sq15", "sq16", "sq17", "sq18", "sq19", "sq20", "sq21", "sq22", "sq23", "sq24", "sq25", "sq26", "sq27", "sq28", "sq29", "sq30"];
 const line2Div = ["sq6", "sq7", "sq8", "sq9", "sq10"];
 const line3Div = ["sq11", "sq12", "sq13", "sq14", "sq15"];
 const line4Div = ["sq16", "sq17", "sq18", "sq19", "sq20"];
@@ -2336,6 +2336,7 @@ let playerAns = [];
 let splitAns = [];
 let colorArr = [];
 let joinedAns = null;
+let activeEl = null;
 
 
 // Classes
@@ -2379,6 +2380,72 @@ class Truthfield {
 
 
 // Functions
+
+const mouseD = () => {
+
+    activeEl = document.activeElement;
+    
+
+
+}
+
+const lightMode = () => {
+
+    let actEl = activeEl.getAttribute("id")
+
+    document.body.setAttribute("class", "light-mode");
+    document.getElementById("board").setAttribute("class", "light-mode");
+    lineDiv.forEach((ex) => {
+
+        document.getElementById(ex).style.borderColor = "black";
+        
+
+
+    })
+
+    inputIdArr.forEach((ex) => {
+
+        document.getElementById(ex).style.color = "black";
+        
+
+
+    })
+
+    document.getElementById("playdark").innerHTML = "Dark Mode";
+    document.getElementById("playdark").onclick = darkMode;
+
+    document.getElementById(actEl).focus()
+
+}
+
+const darkMode = () => {
+    
+    let actEl = activeEl.getAttribute("id")
+    document.body.setAttribute("class", "dark-mode");
+    document.getElementById("board").setAttribute("class", "dark-mode");
+    lineDiv.forEach((ex) => {
+
+        document.getElementById(ex).style.borderColor = "white";
+        
+
+
+    })
+
+    inputIdArr.forEach((ex) => {
+
+        document.getElementById(ex).style.color = "white";
+        
+
+
+    })
+
+    document.getElementById("playdark").innerHTML = "Light Mode";
+    document.getElementById("playdark").onclick = lightMode;
+    document.getElementById(actEl).focus()
+
+
+    
+}
 
 const successFailCheck = (line) => {
 
