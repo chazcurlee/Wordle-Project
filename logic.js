@@ -2341,28 +2341,28 @@ let activeEl = null;
 
 // Classes
 
-class Textfield {
-    constructor() {
+// class Textfield {
+//     constructor() {
 
-        this.used = false;
-        this.correct = "blank";
-
-
-    }
-
-    changeUsed(status) {
-
-        if (status === false) {
-            status = true;
-        }else if (status === true) {
-            status = false;
-        }
-
-    }
+//         this.used = false;
+//         this.correct = "blank";
 
 
+//     }
 
-}
+//     changeUsed(status) {
+
+//         if (status === false) {
+//             status = true;
+//         }else if (status === true) {
+//             status = false;
+//         }
+
+//     }
+
+
+
+// }
 
 class Truthfield {
     constructor(position, letter) {
@@ -2392,6 +2392,9 @@ const mouseD = () => {
 const lightMode = () => {
 
     let actEl = activeEl.getAttribute("id")
+
+
+
 
     document.body.setAttribute("class", "light-mode");
     document.getElementById("board").setAttribute("class", "light-mode");
@@ -2458,7 +2461,7 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
@@ -2494,7 +2497,7 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
@@ -2512,7 +2515,7 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
@@ -2530,7 +2533,7 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
@@ -2548,7 +2551,7 @@ const successFailCheck = (line) => {
             line.forEach((ex) => {
 
                 let check = document.getElementById(ex).getAttribute("class");
-                console.log(check)
+                
                 if (check === "green") {
 
                     checkArr.push(1);
