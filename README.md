@@ -11,6 +11,12 @@ Please try out the phenomenal game of Wordle to know what I am striving to recre
 
 
 ***
+# Current Surge Upload
+[Surge Upload](https://letterle.surge.sh/)
+
+
+
+
 # Current Functionality
 
 * Ability to enter only alphabet into 6 x 5 grid
