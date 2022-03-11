@@ -23,23 +23,23 @@ Please try out the phenomenal game of Wordle to know what I am striving to recre
 
 
 ## MVP
-[ ] Match user answer to correct answer
+[x] Match user answer to correct answer
 
-[ ] Let user know answer and if they have it right
+[x] Let user know answer and if they have it right
 
-[ ] Mark which letters are correct and in right spot (w/ color)
+[x] Mark which letters are correct and in right spot (w/ color)
 
-[ ] Mark which letters are correct and not in right spot (w/ color)
+[x] Mark which letters are correct and not in right spot (w/ color)
 
-[ ] Mark which letters are not correct (w/ color)
+[x] Mark which letters are not correct (w/ color)
 
-[ ] Indicate which line the player is currently on with triangle indicator
+[x] Indicate which line the player is currently on with triangle indicator
 
-[ ] Create Landing page
+[x] Create Landing page
 
-[ ] Create Rules page
+[x] Create Rules page
 
-[ ] Create Dark Mode button and functionality
+[x] Create Dark Mode button and functionality
 
 ## Post-MVP
 
