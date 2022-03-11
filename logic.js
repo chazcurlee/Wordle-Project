@@ -2338,31 +2338,7 @@ let colorArr = [];
 let joinedAns = null;
 let activeEl = null;
 
-
 // Classes
-
-// class Textfield {
-//     constructor() {
-
-//         this.used = false;
-//         this.correct = "blank";
-
-
-//     }
-
-//     changeUsed(status) {
-
-//         if (status === false) {
-//             status = true;
-//         }else if (status === true) {
-//             status = false;
-//         }
-
-//     }
-
-
-
-// }
 
 class Truthfield {
     constructor(position, letter) {
@@ -2722,7 +2698,8 @@ const genAns = () => {
 
     }
     splitAns.pop();
-    // console.log(splitAns); This will give the answer in console. Keeping in case I need to use it again.
+    // This will give the answer in console. Keeping in case I need to use it again.
+    // console.log(splitAns); 
     joinedAns = splitAns.join("");
     
 }

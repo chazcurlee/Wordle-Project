@@ -10,6 +10,16 @@ Please try out the phenomenal game of Wordle to know what I am striving to recre
 ![Image](https://nytco-assets.nytimes.com/2022/01/Screen-Shot-2022-01-30-at-10.05.09-PM.png)
 
 
+*** 
+# Technologies Used
+
+* Github
+* Javascript
+* HTML
+* CSS
+* Surge
+
+
 ***
 # Current Surge Upload
 [Surge Upload](https://letterle.surge.sh/)
